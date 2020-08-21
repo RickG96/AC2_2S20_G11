@@ -10,7 +10,7 @@ var objeto = {
     waterLevel: 3
 }
 
-app.get('/', (req, res) => {
+app.get('/getstats', (req, res) => {
     res.json(objeto);
 });
 
