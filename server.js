@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 var app = express();
 app.use(cors());
+app.use(bodyParser.json());
 
 var objeto = {
     load: false,
@@ -12,6 +14,9 @@ var objeto = {
 
 app.post('/setstats', (req, res) => {
     console.log(req.body);
+    objeto.load = req.body.load;
+    objeto.weight = req.body.weight;
+    objeto.waterLevel = req.body.waterLevel;
     res.status(200);
 })
 
