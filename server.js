@@ -5,10 +5,15 @@ var app = express();
 app.use(cors());
 
 var objeto = {
-    load: true,
-    weight: 5,
-    waterLevel: 3
+    load: false,
+    weight: 0,
+    waterLevel: 0
 }
+
+app.post('/setstats', (req, res) => {
+    console.log(req.body);
+    res.status(200);
+})
 
 app.get('/getstats', (req, res) => {
     res.json(objeto);
