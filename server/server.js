@@ -6,18 +6,21 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-var objeto = {
-    load: false,
-    weight: 0,
-    waterLevel: 0
-}
 
-app.post('/setstats', (req, res) => {
-    console.log(req.body);
-    objeto.load = req.body.load;
-    objeto.weight = req.body.weight;
-    objeto.waterLevel = req.body.waterLevel;
-    res.status(200);
+app.post('/setubicacion', (req, res) => {
+    
+})
+
+app.post('/sethora', (req, res) => {
+    
+})
+
+app.post('/setpeso', (req, res) => {
+    
+})
+
+app.post('/set', (req, res) => {
+    
 })
 
 app.get('/getstats', (req, res) => {
