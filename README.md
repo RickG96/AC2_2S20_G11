@@ -1,2 +1,2 @@
 # Practica1-Arqui2
-API Para la conexion con la smart app y el buzon inteligente
+Desarrollo de Proyecto utilizando el Framework de IOT 
