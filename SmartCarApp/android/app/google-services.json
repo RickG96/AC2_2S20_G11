@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "755092274219",
+    "firebase_url": "https://smartcarweb-74525.firebaseio.com",
+    "project_id": "smartcarweb-74525",
+    "storage_bucket": "smartcarweb-74525.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755092274219:android:bff37c8496283b8a063e6e",
+        "android_client_info": {
+          "package_name": "com.example.SmartCarApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755092274219-uc1da2ueo8hum1no6vk7t9ng7k8bn864.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEAnio6swT3N9a8v9egXoq9HS5sV7fW0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755092274219-uc1da2ueo8hum1no6vk7t9ng7k8bn864.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
