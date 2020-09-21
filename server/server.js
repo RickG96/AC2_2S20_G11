@@ -31,10 +31,15 @@ app.post('/setestados', (req, res) => {
             nsalidas++;
             actual = parseInt(datos[0]);
 
-            db.get('salida')
+            db.get('hora_salida')
               .push({ id: nsalidas, hora: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''), milis: new Date().getTime() })
               .write();
 
+            if(db.get('hora_llegada').size().value() > 0) {
+                db.get('t_regreso')
+                  .push({ tiempo: (db.get('hora_salida').find({ id: nsalidas }).value().milis - db.get('hora_llegada').find({ id: nllegadas }).value().milis) / 1000 })
+                  .write();
+            } 
         }
     } else if(datos[0] == 1) {
         if(actual != datos[0]) {
@@ -49,15 +54,20 @@ app.post('/setestados', (req, res) => {
             nllegadas++;
             actual = parseInt(datos[0]);
 
-            db.get('llegada')
+            db.get('hora_llegada')
               .push({ id: nllegadas, hora: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''), milis: new Date().getTime() })
               .write();
 
+            db.get('t_entrega')
+              .push({ tiempo: (db.get('hora_llegada').find({ id: nsalidas }).value().milis - db.get('hora_salida').find({ id: nsalidas }).value().milis) / 1000 })
+              .write();
         }
     }
     
+    db.update('obstaculos', n => datos[3]) 
+      .write();
 
-    res.json('ok');    
+    res.json('ok');
 })
 
 app.get('/getstats', (req, res) => {
